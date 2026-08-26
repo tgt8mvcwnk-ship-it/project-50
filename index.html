@@ -12,99 +12,283 @@
 
 <style>
 
-*{box-sizing:border-box}
+*{
+
+  box-sizing:border-box;
+
+}
 
 body{
 
-margin:0;
+  margin:0;
 
-font-family:Arial,sans-serif;
+  font-family:Arial,sans-serif;
 
-background:#080c1c;
+  background:#070b1c;
 
-color:white;
+  color:#fff;
 
 }
 
 .container{
 
-max-width:900px;
+  width:92%;
 
-margin:auto;
+  max-width:760px;
 
-padding:60px 25px;
+  margin:auto;
+
+  padding:55px 0 80px;
 
 }
 
-.small{
+.logo{
 
-color:#9da8ca;
+  color:#aeb8dc;
 
-font-size:18px;
+  font-size:18px;
+
+  letter-spacing:2px;
+
+  margin-bottom:25px;
 
 }
 
 h1{
 
-font-size:64px;
+  font-size:56px;
 
-margin:15px 0;
+  line-height:1.05;
+
+  margin:0 0 22px;
 
 }
 
 .subtitle{
 
-font-size:25px;
+  color:#b9c1f0;
 
-color:#b8bdf5;
+  font-size:24px;
 
-line-height:1.4;
+  line-height:1.45;
+
+  margin-bottom:35px;
 
 }
 
 button{
 
-background:white;
+  border:0;
 
-color:#111;
+  border-radius:15px;
 
-border:0;
+  padding:18px 26px;
 
-padding:18px 28px;
+  font-size:19px;
 
-border-radius:14px;
+  font-weight:bold;
 
-font-size:18px;
+  cursor:pointer;
 
-font-weight:bold;
+}
 
-margin-top:20px;
+.main-btn{
+
+  background:#fff;
+
+  color:#080b19;
+
+}
+
+.section{
+
+  margin-top:70px;
 
 }
 
 .card{
 
-background:#151b35;
+  background:#151b36;
 
-padding:35px;
+  border-radius:25px;
 
-border-radius:25px;
+  padding:35px 28px;
 
-margin-top:55px;
+  margin-bottom:22px;
 
 }
 
 .card h2{
 
-font-size:30px;
+  font-size:28px;
+
+  margin-top:0;
 
 }
 
 .card p{
 
-font-size:19px;
+  color:#d9ddf3;
 
-line-height:1.5;
+  font-size:18px;
+
+  line-height:1.55;
+
+}
+
+.question{
+
+  text-align:center;
+
+  margin-top:75px;
+
+}
+
+.question h2{
+
+  font-size:34px;
+
+}
+
+.options{
+
+  display:grid;
+
+  gap:14px;
+
+  margin-top:30px;
+
+}
+
+.option{
+
+  background:#151b36;
+
+  color:white;
+
+  border:1px solid #30395e;
+
+  width:100%;
+
+}
+
+.option:hover{
+
+  background:#222b50;
+
+}
+
+.result{
+
+  display:none;
+
+  margin-top:25px;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  background:#111831;
+
+  text-align:left;
+
+}
+
+.result strong{
+
+  color:#9daaff;
+
+}
+
+.cta{
+
+  margin-top:75px;
+
+  text-align:center;
+
+  padding:45px 25px;
+
+  background:#151b36;
+
+  border-radius:28px;
+
+}
+
+.cta h2{
+
+  font-size:32px;
+
+}
+
+.cta p{
+
+  color:#cbd1ed;
+
+  font-size:18px;
+
+  line-height:1.5;
+
+}
+
+.email{
+
+  width:100%;
+
+  max-width:430px;
+
+  padding:17px;
+
+  border-radius:12px;
+
+  border:0;
+
+  font-size:17px;
+
+  margin:12px 0;
+
+}
+
+.join{
+
+  background:#fff;
+
+  color:#080b19;
+
+  width:100%;
+
+  max-width:430px;
+
+}
+
+.small{
+
+  color:#7f89ae;
+
+  font-size:13px;
+
+  margin-top:15px;
+
+}
+
+@media(max-width:600px){
+
+  h1{
+
+    font-size:48px;
+
+  }
+
+  .subtitle{
+
+    font-size:21px;
+
+  }
+
+  .container{
+
+    padding-top:40px;
+
+  }
 
 }
 
@@ -116,51 +300,201 @@ line-height:1.5;
 
 <div class="container">
 
-<div class="small">PROJECT 50 • MVP</div>
+  <div class="logo">PROJECT 50 • MVP</div>
 
-<h1>$0.50 can scale.</h1>
+  <h1>What could $0.50 do for you?</h1>
 
-<div class="subtitle">
+  <div class="subtitle">
 
-A simple global idea: create tiny value for millions of people.
+    Tiny value. Millions of people.
+
+    One simple idea that can scale globally.
+
+  </div>
+
+  <button class="main-btn"
+
+    onclick="document.getElementById('idea').scrollIntoView({behavior:'smooth'})">
+
+    Try it now
+
+  </button>
+
+  <div class="section" id="idea">
+
+    <div class="card">
+
+      <h2>Start small. Think global.</h2>
+
+      <p>
+
+        PROJECT 50 tests a simple idea:
+
+        can we create something useful enough that millions
+
+        of people would value it at only $0.50?
+
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h2>One tiny action.</h2>
+
+      <p>
+
+        Choose what matters most to you right now.
+
+        This first MVP helps us discover what people
+
+        actually want before we build the full product.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="question">
+
+    <h2>What would help you most today?</h2>
+
+    <div class="options">
+
+      <button class="option"
+
+        onclick="showResult('make')">
+
+        💰 Make extra money
+
+      </button>
+
+      <button class="option"
+
+        onclick="showResult('save')">
+
+        💵 Save money
+
+      </button>
+
+      <button class="option"
+
+        onclick="showResult('buy')">
+
+        🛍 Find a better price
+
+      </button>
+
+      <button class="option"
+
+        onclick="showResult('time')">
+
+        ⚡ Save time
+
+      </button>
+
+    </div>
+
+    <div class="result" id="result"></div>
+
+  </div>
+
+  <div class="cta">
+
+    <h2>Want early access?</h2>
+
+    <p>
+
+      PROJECT 50 is being built in public.
+
+      Join the early list and help shape what we build next.
+
+    </p>
+
+    <input
+
+      class="email"
+
+      type="email"
+
+      id="email"
+
+      placeholder="Your email">
+
+    <br>
+
+    <button class="join" onclick="joinList()">
+
+      Join PROJECT 50
+
+    </button>
+
+    <div class="small" id="message">
+
+      No spam. Just important PROJECT 50 updates.
+
+    </div>
+
+  </div>
 
 </div>
 
-<button onclick="document.getElementById('idea').scrollIntoView()">
+<script>
 
-See the idea
+function showResult(type){
 
-</button>
+  const box=document.getElementById("result");
 
-<div class="card" id="idea">
+  box.style.display="block";
 
-<h2>Start small. Test fast.</h2>
+  const answers={
 
-<p>
+    make:
 
-Launch one useful digital experience, validate demand,
+      "<strong>MAKE MONEY</strong><br><br>Tell us your goal, available time and skills. PROJECT 50 can eventually use AI to find personalized ways to earn extra money.",
 
-then build monetization around micro-payments,
+    save:
 
-affiliates, or premium features.
+      "<strong>SAVE MONEY</strong><br><br>Upload or scan a bill. PROJECT 50 can eventually help identify possible overpayments and cheaper alternatives.",
 
-</p>
+    buy:
 
-</div>
+      "<strong>SMART BUY</strong><br><br>Show us a product or screenshot. PROJECT 50 can eventually help compare prices and find a better deal.",
 
-<div class="card">
+    time:
 
-<h2>Phase 1</h2>
+      "<strong>SAVE TIME</strong><br><br>Tell us what repetitive task wastes your time. PROJECT 50 can use AI to suggest a faster way."
 
-<p>
+  };
 
-Landing page → real users → measure interest → improve → monetize.
+  box.innerHTML=answers[type];
 
-</p>
+  box.scrollIntoView({behavior:"smooth",block:"center"});
 
-</div>
+}
 
-</div>
+function joinList(){
+
+  const email=document.getElementById("email").value;
+
+  const message=document.getElementById("message");
+
+  if(!email || !email.includes("@")){
+
+    message.innerHTML="Please enter a valid email.";
+
+    return;
+
+  }
+
+  message.innerHTML=
+
+    "✓ You're on the PROJECT 50 early-access list!";
+
+}
+
+</script>
 
 </body>
 
