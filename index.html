@@ -42,19 +42,73 @@ h2{font-size:30px;margin-top:60px}
 
 label{display:block;margin:15px 0 7px;color:#cbd2ef}
 
-input,select,textarea{width:100%;padding:15px;border-radius:12px;border:1px solid #3a456d;background:#0b1126;color:#fff;font-size:16px}
+input,select,textarea{
+
+width:100%;
+
+padding:15px;
+
+border-radius:12px;
+
+border:1px solid #3a456d;
+
+background:#0b1126;
+
+color:#fff;
+
+font-size:16px
+
+}
 
 textarea{min-height:85px}
 
-.go{width:100%;padding:17px;margin-top:20px;background:#fff;color:#080b19}
+.go{
 
-.result{display:none;margin-top:20px;padding:20px;border-radius:16px;background:#0b1126;line-height:1.55}
+width:100%;
+
+padding:17px;
+
+margin-top:20px;
+
+background:#fff;
+
+color:#080b19
+
+}
+
+.result{
+
+display:none;
+
+margin-top:20px;
+
+padding:20px;
+
+border-radius:16px;
+
+background:#0b1126;
+
+line-height:1.55;
+
+white-space:pre-wrap
+
+}
 
 .result.show{display:block}
 
 .result strong{color:#aeb7ff}
 
-footer{margin-top:65px;color:#7f89ad;text-align:center;font-size:13px}
+footer{
+
+margin-top:65px;
+
+color:#7f89ad;
+
+text-align:center;
+
+font-size:13px
+
+}
 
 </style>
 
@@ -74,7 +128,11 @@ Choose what you need today and get a quick personalized action plan.
 
 </div>
 
-<button class="start" onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">
+<button
+
+class="start"
+
+onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">
 
 Start now
 
@@ -86,13 +144,29 @@ Start now
 
 <div class="menu">
 
-<button class="choice" onclick="openTool('make',this)">💰 Make extra money</button>
+<button class="choice" onclick="openTool('make',this)">
 
-<button class="choice" onclick="openTool('save',this)">💵 Save money</button>
+💰 Make extra money
 
-<button class="choice" onclick="openTool('buy',this)">🛍 Find a better price</button>
+</button>
 
-<button class="choice" onclick="openTool('time',this)">⚡ Save time</button>
+<button class="choice" onclick="openTool('save',this)">
+
+💵 Save money
+
+</button>
+
+<button class="choice" onclick="openTool('buy',this)">
+
+🛍 Find a better price
+
+</button>
+
+<button class="choice" onclick="openTool('time',this)">
+
+⚡ Save time
+
+</button>
 
 </div>
 
@@ -120,9 +194,17 @@ Start now
 
 <label>Skills or resources</label>
 
-<textarea id="skills" placeholder="Driving, sales, handyman, computer, car..."></textarea>
+<textarea
 
-<button class="go" onclick="makeMoney()">Build my plan</button>
+id="skills"
+
+placeholder="Driving, sales, handyman, computer, car..."></textarea>
+
+<button class="go" onclick="makeMoney()">
+
+Build my plan
+
+</button>
 
 <div class="result" id="makeResult"></div>
 
@@ -156,7 +238,11 @@ Start now
 
 <input id="monthly" type="number" placeholder="200">
 
-<button class="go" onclick="saveMoney()">Check savings</button>
+<button class="go" onclick="saveMoney()">
+
+Check savings
+
+</button>
 
 <div class="result" id="saveResult"></div>
 
@@ -174,7 +260,11 @@ Start now
 
 <input id="price" type="number" placeholder="249">
 
-<button class="go" onclick="checkPrice()">Check this deal</button>
+<button class="go" onclick="checkPrice()">
+
+Check this deal
+
+</button>
 
 <div class="result" id="buyResult"></div>
 
@@ -186,13 +276,21 @@ Start now
 
 <label>Task</label>
 
-<textarea id="task" placeholder="Emails, invoices, routes, research..."></textarea>
+<textarea
+
+id="task"
+
+placeholder="Emails, invoices, routes, research..."></textarea>
 
 <label>Hours per week</label>
 
 <input id="hours" type="number" placeholder="5">
 
-<button class="go" onclick="saveTime()">Find a faster way</button>
+<button class="go" onclick="saveTime()">
+
+Find a faster way
+
+</button>
 
 <div class="result" id="timeResult"></div>
 
@@ -200,7 +298,11 @@ Start now
 
 </section>
 
-<footer>PROJECT 50 • Small value. Massive scale.</footer>
+<footer>
+
+PROJECT 50 • Small value. Massive scale.
+
+</footer>
 
 </main>
 
@@ -208,9 +310,13 @@ Start now
 
 function openTool(id,b){
 
- document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));
+ document.querySelectorAll('.panel')
 
- document.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));
+ .forEach(x=>x.classList.remove('show'));
+
+ document.querySelectorAll('.choice')
+
+ .forEach(x=>x.classList.remove('active'));
 
  document.getElementById(id).classList.add('show');
 
@@ -224,13 +330,13 @@ function cash(n){
 
 }
 
-function makeMoney(){
+async function makeMoney(){
 
  let goal=+document.getElementById('goal').value;
 
  let days=+document.getElementById('deadline').value;
 
- let skills=document.getElementById('skills').value.toLowerCase();
+ let skills=document.getElementById('skills').value;
 
  let box=document.getElementById('makeResult');
 
@@ -238,41 +344,61 @@ function makeMoney(){
 
   box.className='result show';
 
-  box.innerHTML='Enter your income goal first.';
+  box.textContent='Enter your income goal first.';
 
   return;
 
  }
 
- let ideas=[
-
-  'Offer a local service people can buy today.',
-
-  'Sell unused items or test local resale.',
-
-  'Take a short paid gig before building anything long-term.'
-
- ];
-
- if(skills.includes('car')||skills.includes('driv')){
-
-  ideas[0]='Use driving, delivery or chauffeur work during peak-demand hours.';
-
- }
-
  box.className='result show';
 
- box.innerHTML=
+ box.textContent='AI is building your personalized plan...';
 
- '<strong>Target: '+cash(goal)+'</strong><br>'+
+ try{
 
- 'Average needed: <strong>'+cash(goal/days)+' per day</strong><br><br>'+
+  const response=await fetch('/api/plan',{
 
- '1. '+ideas[0]+'<br>'+
+   method:'POST',
 
- '2. '+ideas[1]+'<br>'+
+   headers:{
 
- '3. '+ideas[2];
+    'Content-Type':'application/json'
+
+   },
+
+   body:JSON.stringify({
+
+    goal:goal,
+
+    deadline:days,
+
+    skills:skills
+
+   })
+
+  });
+
+  const data=await response.json();
+
+  if(!response.ok){
+
+   throw new Error(
+
+    data.error || 'AI request failed'
+
+   );
+
+  }
+
+  box.textContent=data.plan;
+
+ }catch(error){
+
+  box.textContent=
+
+  'AI connection error.\n\n'+error.message;
+
+ }
 
 }
 
@@ -304,7 +430,9 @@ function saveMoney(){
 
  'First savings target: <strong>'+
 
- cash(cost*.10)+'–'+cash(cost*.25)+'/month</strong>.<br><br>'+
+ cash(cost*.10)+'–'+cash(cost*.25)+
+
+ '/month</strong>.<br><br>'+
 
  'Compare 3 competing offers, then ask your current provider to match the best one.';
 
@@ -336,9 +464,15 @@ function checkPrice(){
 
  product+' at '+cash(price)+'.<br><br>'+
 
- 'Try to find it at <strong>'+cash(price*.88)+' or less</strong> before buying.<br>'+
+ 'Try to find it at <strong>'+
 
- 'Potential target saving: <strong>'+cash(price*.12)+'</strong>.';
+ cash(price*.88)+
+
+ ' or less</strong> before buying.<br>'+
+
+ 'Potential target saving: <strong>'+
+
+ cash(price*.12)+'</strong>.';
 
 }
 
@@ -354,7 +488,9 @@ function saveTime(){
 
   box.className='result show';
 
-  box.innerHTML='Enter the task and weekly hours first.';
+  box.innerHTML=
+
+  'Enter the task and weekly hours first.';
 
   return;
 
@@ -366,9 +502,13 @@ function saveTime(){
 
  '<strong>Your target:</strong> recover about '+
 
- (hours*.4).toFixed(1)+' hours/week.<br><br>'+
+ (hours*.4).toFixed(1)+
 
- 'Break "'+task+'" into 3 repeated steps. Template, batch or automate the most repetitive step first.';
+ ' hours/week.<br><br>'+
+
+ 'Break "'+task+
+
+ '" into 3 repeated steps. Template, batch or automate the most repetitive step first.';
 
 }
 
