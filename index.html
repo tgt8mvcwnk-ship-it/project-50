@@ -14,99 +14,229 @@
 
 *{box-sizing:border-box}
 
-body{margin:0;background:#070b1c;color:#fff;font-family:Arial,sans-serif}
+body{
 
-main{width:92%;max-width:720px;margin:auto;padding:45px 0 80px}
+  margin:0;
 
-.logo{color:#9fa9d8;letter-spacing:2px;margin-bottom:22px}
+  background:#070b1c;
 
-h1{font-size:48px;line-height:1.08;margin:0 0 18px}
+  color:#fff;
 
-.intro{font-size:20px;line-height:1.5;color:#c0c7ef;margin-bottom:30px}
-
-button{border:0;border-radius:16px;font-weight:700;font-size:18px;cursor:pointer}
-
-.start{padding:18px 26px;background:#fff;color:#080b19}
-
-h2{font-size:30px;margin-top:60px}
-
-.menu{display:grid;gap:14px}
-
-.choice{padding:21px;background:#171d3a;color:#fff;border:1px solid #39436d;text-align:left}
-
-.choice.active{background:#29345f}
-
-.panel{display:none;background:#151b36;padding:25px;border-radius:22px;margin-top:20px}
-
-.panel.show{display:block}
-
-label{display:block;margin:15px 0 7px;color:#cbd2ef}
-
-input,select,textarea{
-
-width:100%;
-
-padding:15px;
-
-border-radius:12px;
-
-border:1px solid #3a456d;
-
-background:#0b1126;
-
-color:#fff;
-
-font-size:16px
+  font-family:Arial,sans-serif
 
 }
 
-textarea{min-height:85px}
+main{
+
+  width:92%;
+
+  max-width:720px;
+
+  margin:auto;
+
+  padding:45px 0 80px
+
+}
+
+.logo{
+
+  color:#9fa9d8;
+
+  letter-spacing:2px;
+
+  margin-bottom:22px
+
+}
+
+h1{
+
+  font-size:48px;
+
+  line-height:1.08;
+
+  margin:0 0 18px
+
+}
+
+.intro{
+
+  font-size:20px;
+
+  line-height:1.5;
+
+  color:#c0c7ef;
+
+  margin-bottom:30px
+
+}
+
+button{
+
+  border:0;
+
+  border-radius:16px;
+
+  font-weight:700;
+
+  font-size:18px;
+
+  cursor:pointer
+
+}
+
+.start{
+
+  padding:18px 26px;
+
+  background:#fff;
+
+  color:#080b19
+
+}
+
+h2{
+
+  font-size:30px;
+
+  margin-top:60px
+
+}
+
+.menu{
+
+  display:grid;
+
+  gap:14px
+
+}
+
+.choice{
+
+  padding:21px;
+
+  background:#171d3a;
+
+  color:#fff;
+
+  border:1px solid #39436d;
+
+  text-align:left
+
+}
+
+.choice.active{
+
+  background:#29345f
+
+}
+
+.panel{
+
+  display:none;
+
+  background:#151b36;
+
+  padding:25px;
+
+  border-radius:22px;
+
+  margin-top:20px
+
+}
+
+.panel.show{
+
+  display:block
+
+}
+
+label{
+
+  display:block;
+
+  margin:15px 0 7px;
+
+  color:#cbd2ef
+
+}
+
+input,select,textarea{
+
+  width:100%;
+
+  padding:15px;
+
+  border-radius:12px;
+
+  border:1px solid #3a456d;
+
+  background:#0b1126;
+
+  color:#fff;
+
+  font-size:16px
+
+}
+
+textarea{
+
+  min-height:85px
+
+}
 
 .go{
 
-width:100%;
+  width:100%;
 
-padding:17px;
+  padding:17px;
 
-margin-top:20px;
+  margin-top:20px;
 
-background:#fff;
+  background:#fff;
 
-color:#080b19
+  color:#080b19
 
 }
 
 .result{
 
-display:none;
+  display:none;
 
-margin-top:20px;
+  margin-top:20px;
 
-padding:20px;
+  padding:20px;
 
-border-radius:16px;
+  border-radius:16px;
 
-background:#0b1126;
+  background:#0b1126;
 
-line-height:1.55;
+  line-height:1.55;
 
-white-space:pre-wrap
+  white-space:pre-wrap
 
 }
 
-.result.show{display:block}
+.result.show{
 
-.result strong{color:#aeb7ff}
+  display:block
+
+}
+
+.result strong{
+
+  color:#aeb7ff
+
+}
 
 footer{
 
-margin-top:65px;
+  margin-top:65px;
 
-color:#7f89ad;
+  color:#7f89ad;
 
-text-align:center;
+  text-align:center;
 
-font-size:13px
+  font-size:13px
 
 }
 
@@ -310,205 +440,237 @@ PROJECT 50 • Small value. Massive scale.
 
 function openTool(id,b){
 
- document.querySelectorAll('.panel')
+  document.querySelectorAll('.panel')
 
- .forEach(x=>x.classList.remove('show'));
+    .forEach(x=>x.classList.remove('show'));
 
- document.querySelectorAll('.choice')
+  document.querySelectorAll('.choice')
 
- .forEach(x=>x.classList.remove('active'));
+    .forEach(x=>x.classList.remove('active'));
 
- document.getElementById(id).classList.add('show');
+  document.getElementById(id).classList.add('show');
 
- b.classList.add('active');
+  b.classList.add('active');
 
 }
 
 function cash(n){
 
- return '$'+Math.round(n).toLocaleString();
+  return '$'+Math.round(n).toLocaleString();
 
 }
 
 async function makeMoney(){
 
- let goal=+document.getElementById('goal').value;
+  const goal=+document.getElementById('goal').value;
 
- let days=+document.getElementById('deadline').value;
+  const days=+document.getElementById('deadline').value;
 
- let skills=document.getElementById('skills').value;
+  const skills=document.getElementById('skills').value;
 
- let box=document.getElementById('makeResult');
+  const box=document.getElementById('makeResult');
 
- if(!goal){
+  if(!goal){
 
-  box.className='result show';
+    box.className='result show';
 
-  box.textContent='Enter your income goal first.';
+    box.textContent='Enter your income goal first.';
 
-  return;
-
- }
-
- box.className='result show';
-
- box.textContent='AI is building your personalized plan...';
-
- try{
-
-  const response=await fetch('/api/plan',{
-
-   method:'POST',
-
-   headers:{
-
-    'Content-Type':'application/json'
-
-   },
-
-   body:JSON.stringify({
-
-    goal:goal,
-
-    deadline:days,
-
-    skills:skills
-
-   })
-
-  });
-
-  const data=await response.json();
-
-  if(!response.ok){
-
-   throw new Error(
-
-    data.error || 'AI request failed'
-
-   );
+    return;
 
   }
 
-  box.textContent=data.plan;
+  box.className='result show';
 
- }catch(error){
+  box.textContent='AI is building your personalized plan...';
 
-  box.textContent=
+  try{
 
-  'AI connection error.\n\n'+error.message;
+    const response=await fetch('/api/plan',{
 
- }
+      method:'POST',
+
+      headers:{
+
+        'Content-Type':'application/json'
+
+      },
+
+      body:JSON.stringify({
+
+        goal:goal,
+
+        deadline:days,
+
+        skills:skills
+
+      })
+
+    });
+
+    const raw=await response.text();
+
+    let data;
+
+    try{
+
+      data=JSON.parse(raw);
+
+    }catch(e){
+
+      throw new Error(
+
+        'Server returned an unexpected response.\n\n' +
+
+        'HTTP '+response.status+'\n\n' +
+
+        raw.slice(0,500)
+
+      );
+
+    }
+
+    if(!response.ok){
+
+      throw new Error(
+
+        data.error ||
+
+        'Server error '+response.status
+
+      );
+
+    }
+
+    if(!data.plan){
+
+      throw new Error(
+
+        'AI responded, but no plan was returned.'
+
+      );
+
+    }
+
+    box.textContent=data.plan;
+
+  }catch(error){
+
+    box.textContent=
+
+      'AI connection error.\n\n'+
+
+      error.message;
+
+  }
 
 }
 
 function saveMoney(){
 
- let cost=+document.getElementById('monthly').value;
+  let cost=+document.getElementById('monthly').value;
 
- let type=document.getElementById('expense').value;
+  let type=document.getElementById('expense').value;
 
- let box=document.getElementById('saveResult');
+  let box=document.getElementById('saveResult');
 
- if(!cost){
+  if(!cost){
 
-  box.className='result show';
+    box.className='result show';
 
-  box.innerHTML='Enter your monthly cost first.';
+    box.innerHTML='Enter your monthly cost first.';
 
-  return;
+    return;
 
- }
-
- box.className='result show';
-
- box.innerHTML=
-
- '<strong>'+type+'</strong><br>'+
-
- 'Current: '+cash(cost)+'/month<br><br>'+
-
- 'First savings target: <strong>'+
-
- cash(cost*.10)+'–'+cash(cost*.25)+
-
- '/month</strong>.<br><br>'+
-
- 'Compare 3 competing offers, then ask your current provider to match the best one.';
-
-}
-
-function checkPrice(){
-
- let product=document.getElementById('product').value;
-
- let price=+document.getElementById('price').value;
-
- let box=document.getElementById('buyResult');
-
- if(!product||!price){
-
-  box.className='result show';
-
-  box.innerHTML='Enter the product and price first.';
-
-  return;
-
- }
-
- box.className='result show';
-
- box.innerHTML=
-
- '<strong>FIND CHEAPER</strong><br>'+
-
- product+' at '+cash(price)+'.<br><br>'+
-
- 'Try to find it at <strong>'+
-
- cash(price*.88)+
-
- ' or less</strong> before buying.<br>'+
-
- 'Potential target saving: <strong>'+
-
- cash(price*.12)+'</strong>.';
-
-}
-
-function saveTime(){
-
- let task=document.getElementById('task').value;
-
- let hours=+document.getElementById('hours').value;
-
- let box=document.getElementById('timeResult');
-
- if(!task||!hours){
+  }
 
   box.className='result show';
 
   box.innerHTML=
 
-  'Enter the task and weekly hours first.';
+    '<strong>'+type+'</strong><br>'+
 
-  return;
+    'Current: '+cash(cost)+'/month<br><br>'+
 
- }
+    'First savings target: <strong>'+
 
- box.className='result show';
+    cash(cost*.10)+'–'+cash(cost*.25)+
 
- box.innerHTML=
+    '/month</strong>.<br><br>'+
 
- '<strong>Your target:</strong> recover about '+
+    'Compare 3 competing offers, then ask your current provider to match the best one.';
 
- (hours*.4).toFixed(1)+
+}
 
- ' hours/week.<br><br>'+
+function checkPrice(){
 
- 'Break "'+task+
+  let product=document.getElementById('product').value;
 
- '" into 3 repeated steps. Template, batch or automate the most repetitive step first.';
+  let price=+document.getElementById('price').value;
+
+  let box=document.getElementById('buyResult');
+
+  if(!product||!price){
+
+    box.className='result show';
+
+    box.innerHTML='Enter the product and price first.';
+
+    return;
+
+  }
+
+  box.className='result show';
+
+  box.innerHTML=
+
+    '<strong>FIND CHEAPER</strong><br>'+
+
+    product+' at '+cash(price)+'.<br><br>'+
+
+    'Try to find it at <strong>'+
+
+    cash(price*.88)+
+
+    ' or less</strong> before buying.<br>'+
+
+    'Potential target saving: <strong>'+
+
+    cash(price*.12)+'</strong>.';
+
+}
+
+function saveTime(){
+
+  let task=document.getElementById('task').value;
+
+  let hours=+document.getElementById('hours').value;
+
+  let box=document.getElementById('timeResult');
+
+  if(!task||!hours){
+
+    box.className='result show';
+
+    box.innerHTML='Enter the task and weekly hours first.';
+
+    return;
+
+  }
+
+  box.className='result show';
+
+  box.innerHTML=
+
+    '<strong>Your target:</strong> recover about '+
+
+    (hours*.4).toFixed(1)+
+
+    ' hours/week.<br><br>'+
+
+    'Break "'+task+
+
+    '" into 3 repeated steps. Template, batch or automate the most repetitive step first.';
 
 }
 
