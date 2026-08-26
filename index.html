@@ -322,6 +322,16 @@ Start now
 
 </select>
 
+<label>Location</label>
+
+<input
+
+id="location"
+
+type="text"
+
+placeholder="Los Angeles, CA">
+
 <label>Skills or resources</label>
 
 <textarea
@@ -466,6 +476,8 @@ async function makeMoney(){
 
   const days=+document.getElementById('deadline').value;
 
+  const location=document.getElementById('location').value;
+
   const skills=document.getElementById('skills').value;
 
   const box=document.getElementById('makeResult');
@@ -501,6 +513,8 @@ async function makeMoney(){
         goal:goal,
 
         deadline:days,
+
+        location:location,
 
         skills:skills
 
