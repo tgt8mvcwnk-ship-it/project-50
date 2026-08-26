@@ -1,296 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+<meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>PROJECT 50</title>
 
 <style>
 
-*{
+*{box-sizing:border-box}
 
-  box-sizing:border-box;
+body{margin:0;background:#070b1c;color:#fff;font-family:Arial,sans-serif}
 
-}
+main{width:92%;max-width:720px;margin:auto;padding:45px 0 80px}
 
-body{
+.logo{color:#9fa9d8;letter-spacing:2px;margin-bottom:22px}
 
-  margin:0;
+h1{font-size:48px;line-height:1.08;margin:0 0 18px}
 
-  font-family:Arial,sans-serif;
+.intro{font-size:20px;line-height:1.5;color:#c0c7ef;margin-bottom:30px}
 
-  background:#070b1c;
+button{border:0;border-radius:16px;font-weight:700;font-size:18px;cursor:pointer}
 
-  color:#fff;
+.start{padding:18px 26px;background:#fff;color:#080b19}
 
-}
+h2{font-size:30px;margin-top:60px}
 
-.container{
+.menu{display:grid;gap:14px}
 
-  width:92%;
+.choice{padding:21px;background:#171d3a;color:#fff;border:1px solid #39436d;text-align:left}
 
-  max-width:760px;
+.choice.active{background:#29345f}
 
-  margin:auto;
+.panel{display:none;background:#151b36;padding:25px;border-radius:22px;margin-top:20px}
 
-  padding:55px 0 80px;
+.panel.show{display:block}
 
-}
+label{display:block;margin:15px 0 7px;color:#cbd2ef}
 
-.logo{
+input,select,textarea{width:100%;padding:15px;border-radius:12px;border:1px solid #3a456d;background:#0b1126;color:#fff;font-size:16px}
 
-  color:#aeb8dc;
+textarea{min-height:85px}
 
-  font-size:18px;
+.go{width:100%;padding:17px;margin-top:20px;background:#fff;color:#080b19}
 
-  letter-spacing:2px;
+.result{display:none;margin-top:20px;padding:20px;border-radius:16px;background:#0b1126;line-height:1.55}
 
-  margin-bottom:25px;
+.result.show{display:block}
 
-}
+.result strong{color:#aeb7ff}
 
-h1{
-
-  font-size:56px;
-
-  line-height:1.05;
-
-  margin:0 0 22px;
-
-}
-
-.subtitle{
-
-  color:#b9c1f0;
-
-  font-size:24px;
-
-  line-height:1.45;
-
-  margin-bottom:35px;
-
-}
-
-button{
-
-  border:0;
-
-  border-radius:15px;
-
-  padding:18px 26px;
-
-  font-size:19px;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-}
-
-.main-btn{
-
-  background:#fff;
-
-  color:#080b19;
-
-}
-
-.section{
-
-  margin-top:70px;
-
-}
-
-.card{
-
-  background:#151b36;
-
-  border-radius:25px;
-
-  padding:35px 28px;
-
-  margin-bottom:22px;
-
-}
-
-.card h2{
-
-  font-size:28px;
-
-  margin-top:0;
-
-}
-
-.card p{
-
-  color:#d9ddf3;
-
-  font-size:18px;
-
-  line-height:1.55;
-
-}
-
-.question{
-
-  text-align:center;
-
-  margin-top:75px;
-
-}
-
-.question h2{
-
-  font-size:34px;
-
-}
-
-.options{
-
-  display:grid;
-
-  gap:14px;
-
-  margin-top:30px;
-
-}
-
-.option{
-
-  background:#151b36;
-
-  color:white;
-
-  border:1px solid #30395e;
-
-  width:100%;
-
-}
-
-.option:hover{
-
-  background:#222b50;
-
-}
-
-.result{
-
-  display:none;
-
-  margin-top:25px;
-
-  padding:25px;
-
-  border-radius:20px;
-
-  background:#111831;
-
-  text-align:left;
-
-}
-
-.result strong{
-
-  color:#9daaff;
-
-}
-
-.cta{
-
-  margin-top:75px;
-
-  text-align:center;
-
-  padding:45px 25px;
-
-  background:#151b36;
-
-  border-radius:28px;
-
-}
-
-.cta h2{
-
-  font-size:32px;
-
-}
-
-.cta p{
-
-  color:#cbd1ed;
-
-  font-size:18px;
-
-  line-height:1.5;
-
-}
-
-.email{
-
-  width:100%;
-
-  max-width:430px;
-
-  padding:17px;
-
-  border-radius:12px;
-
-  border:0;
-
-  font-size:17px;
-
-  margin:12px 0;
-
-}
-
-.join{
-
-  background:#fff;
-
-  color:#080b19;
-
-  width:100%;
-
-  max-width:430px;
-
-}
-
-.small{
-
-  color:#7f89ae;
-
-  font-size:13px;
-
-  margin-top:15px;
-
-}
-
-@media(max-width:600px){
-
-  h1{
-
-    font-size:48px;
-
-  }
-
-  .subtitle{
-
-    font-size:21px;
-
-  }
-
-  .container{
-
-    padding-top:40px;
-
-  }
-
-}
+footer{margin-top:65px;color:#7f89ad;text-align:center;font-size:13px}
 
 </style>
 
@@ -298,199 +62,313 @@ button{
 
 <body>
 
-<div class="container">
+<main>
 
-  <div class="logo">PROJECT 50 • MVP</div>
+<div class="logo">PROJECT 50 • MVP</div>
 
-  <h1>What could $0.50 do for you?</h1>
+<h1>Improve your money or time in one small step.</h1>
 
-  <div class="subtitle">
+<div class="intro">
 
-    Tiny value. Millions of people.
-
-    One simple idea that can scale globally.
-
-  </div>
-
-  <button class="main-btn"
-
-    onclick="document.getElementById('idea').scrollIntoView({behavior:'smooth'})">
-
-    Try it now
-
-  </button>
-
-  <div class="section" id="idea">
-
-    <div class="card">
-
-      <h2>Start small. Think global.</h2>
-
-      <p>
-
-        PROJECT 50 tests a simple idea:
-
-        can we create something useful enough that millions
-
-        of people would value it at only $0.50?
-
-      </p>
-
-    </div>
-
-    <div class="card">
-
-      <h2>One tiny action.</h2>
-
-      <p>
-
-        Choose what matters most to you right now.
-
-        This first MVP helps us discover what people
-
-        actually want before we build the full product.
-
-      </p>
-
-    </div>
-
-  </div>
-
-  <div class="question">
-
-    <h2>What would help you most today?</h2>
-
-    <div class="options">
-
-      <button class="option"
-
-        onclick="showResult('make')">
-
-        💰 Make extra money
-
-      </button>
-
-      <button class="option"
-
-        onclick="showResult('save')">
-
-        💵 Save money
-
-      </button>
-
-      <button class="option"
-
-        onclick="showResult('buy')">
-
-        🛍 Find a better price
-
-      </button>
-
-      <button class="option"
-
-        onclick="showResult('time')">
-
-        ⚡ Save time
-
-      </button>
-
-    </div>
-
-    <div class="result" id="result"></div>
-
-  </div>
-
-  <div class="cta">
-
-    <h2>Want early access?</h2>
-
-    <p>
-
-      PROJECT 50 is being built in public.
-
-      Join the early list and help shape what we build next.
-
-    </p>
-
-    <input
-
-      class="email"
-
-      type="email"
-
-      id="email"
-
-      placeholder="Your email">
-
-    <br>
-
-    <button class="join" onclick="joinList()">
-
-      Join PROJECT 50
-
-    </button>
-
-    <div class="small" id="message">
-
-      No spam. Just important PROJECT 50 updates.
-
-    </div>
-
-  </div>
+Choose what you need today and get a quick personalized action plan.
 
 </div>
 
+<button class="start" onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth'})">
+
+Start now
+
+</button>
+
+<section id="tools">
+
+<h2>What do you want to improve?</h2>
+
+<div class="menu">
+
+<button class="choice" onclick="openTool('make',this)">💰 Make extra money</button>
+
+<button class="choice" onclick="openTool('save',this)">💵 Save money</button>
+
+<button class="choice" onclick="openTool('buy',this)">🛍 Find a better price</button>
+
+<button class="choice" onclick="openTool('time',this)">⚡ Save time</button>
+
+</div>
+
+<div class="panel" id="make">
+
+<h3>💰 Make extra money</h3>
+
+<label>Your goal</label>
+
+<input id="goal" type="number" placeholder="300">
+
+<label>Deadline</label>
+
+<select id="deadline">
+
+<option value="1">Today</option>
+
+<option value="2">This weekend</option>
+
+<option value="7">Within 7 days</option>
+
+<option value="30">Within 30 days</option>
+
+</select>
+
+<label>Skills or resources</label>
+
+<textarea id="skills" placeholder="Driving, sales, handyman, computer, car..."></textarea>
+
+<button class="go" onclick="makeMoney()">Build my plan</button>
+
+<div class="result" id="makeResult"></div>
+
+</div>
+
+<div class="panel" id="save">
+
+<h3>💵 Save money</h3>
+
+<label>Expense</label>
+
+<select id="expense">
+
+<option>Phone</option>
+
+<option>Internet</option>
+
+<option>Car insurance</option>
+
+<option>Home insurance</option>
+
+<option>Subscriptions</option>
+
+<option>Credit cards</option>
+
+<option>Other</option>
+
+</select>
+
+<label>Monthly cost</label>
+
+<input id="monthly" type="number" placeholder="200">
+
+<button class="go" onclick="saveMoney()">Check savings</button>
+
+<div class="result" id="saveResult"></div>
+
+</div>
+
+<div class="panel" id="buy">
+
+<h3>🛍 Better price</h3>
+
+<label>Product</label>
+
+<input id="product" placeholder="AirPods Pro">
+
+<label>Current price</label>
+
+<input id="price" type="number" placeholder="249">
+
+<button class="go" onclick="checkPrice()">Check this deal</button>
+
+<div class="result" id="buyResult"></div>
+
+</div>
+
+<div class="panel" id="time">
+
+<h3>⚡ Save time</h3>
+
+<label>Task</label>
+
+<textarea id="task" placeholder="Emails, invoices, routes, research..."></textarea>
+
+<label>Hours per week</label>
+
+<input id="hours" type="number" placeholder="5">
+
+<button class="go" onclick="saveTime()">Find a faster way</button>
+
+<div class="result" id="timeResult"></div>
+
+</div>
+
+</section>
+
+<footer>PROJECT 50 • Small value. Massive scale.</footer>
+
+</main>
+
 <script>
 
-function showResult(type){
+function openTool(id,b){
 
-  const box=document.getElementById("result");
+ document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));
 
-  box.style.display="block";
+ document.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));
 
-  const answers={
+ document.getElementById(id).classList.add('show');
 
-    make:
-
-      "<strong>MAKE MONEY</strong><br><br>Tell us your goal, available time and skills. PROJECT 50 can eventually use AI to find personalized ways to earn extra money.",
-
-    save:
-
-      "<strong>SAVE MONEY</strong><br><br>Upload or scan a bill. PROJECT 50 can eventually help identify possible overpayments and cheaper alternatives.",
-
-    buy:
-
-      "<strong>SMART BUY</strong><br><br>Show us a product or screenshot. PROJECT 50 can eventually help compare prices and find a better deal.",
-
-    time:
-
-      "<strong>SAVE TIME</strong><br><br>Tell us what repetitive task wastes your time. PROJECT 50 can use AI to suggest a faster way."
-
-  };
-
-  box.innerHTML=answers[type];
-
-  box.scrollIntoView({behavior:"smooth",block:"center"});
+ b.classList.add('active');
 
 }
 
-function joinList(){
+function cash(n){
 
-  const email=document.getElementById("email").value;
+ return '$'+Math.round(n).toLocaleString();
 
-  const message=document.getElementById("message");
+}
 
-  if(!email || !email.includes("@")){
+function makeMoney(){
 
-    message.innerHTML="Please enter a valid email.";
+ let goal=+document.getElementById('goal').value;
 
-    return;
+ let days=+document.getElementById('deadline').value;
 
-  }
+ let skills=document.getElementById('skills').value.toLowerCase();
 
-  message.innerHTML=
+ let box=document.getElementById('makeResult');
 
-    "✓ You're on the PROJECT 50 early-access list!";
+ if(!goal){
+
+  box.className='result show';
+
+  box.innerHTML='Enter your income goal first.';
+
+  return;
+
+ }
+
+ let ideas=[
+
+  'Offer a local service people can buy today.',
+
+  'Sell unused items or test local resale.',
+
+  'Take a short paid gig before building anything long-term.'
+
+ ];
+
+ if(skills.includes('car')||skills.includes('driv')){
+
+  ideas[0]='Use driving, delivery or chauffeur work during peak-demand hours.';
+
+ }
+
+ box.className='result show';
+
+ box.innerHTML=
+
+ '<strong>Target: '+cash(goal)+'</strong><br>'+
+
+ 'Average needed: <strong>'+cash(goal/days)+' per day</strong><br><br>'+
+
+ '1. '+ideas[0]+'<br>'+
+
+ '2. '+ideas[1]+'<br>'+
+
+ '3. '+ideas[2];
+
+}
+
+function saveMoney(){
+
+ let cost=+document.getElementById('monthly').value;
+
+ let type=document.getElementById('expense').value;
+
+ let box=document.getElementById('saveResult');
+
+ if(!cost){
+
+  box.className='result show';
+
+  box.innerHTML='Enter your monthly cost first.';
+
+  return;
+
+ }
+
+ box.className='result show';
+
+ box.innerHTML=
+
+ '<strong>'+type+'</strong><br>'+
+
+ 'Current: '+cash(cost)+'/month<br><br>'+
+
+ 'First savings target: <strong>'+
+
+ cash(cost*.10)+'–'+cash(cost*.25)+'/month</strong>.<br><br>'+
+
+ 'Compare 3 competing offers, then ask your current provider to match the best one.';
+
+}
+
+function checkPrice(){
+
+ let product=document.getElementById('product').value;
+
+ let price=+document.getElementById('price').value;
+
+ let box=document.getElementById('buyResult');
+
+ if(!product||!price){
+
+  box.className='result show';
+
+  box.innerHTML='Enter the product and price first.';
+
+  return;
+
+ }
+
+ box.className='result show';
+
+ box.innerHTML=
+
+ '<strong>FIND CHEAPER</strong><br>'+
+
+ product+' at '+cash(price)+'.<br><br>'+
+
+ 'Try to find it at <strong>'+cash(price*.88)+' or less</strong> before buying.<br>'+
+
+ 'Potential target saving: <strong>'+cash(price*.12)+'</strong>.';
+
+}
+
+function saveTime(){
+
+ let task=document.getElementById('task').value;
+
+ let hours=+document.getElementById('hours').value;
+
+ let box=document.getElementById('timeResult');
+
+ if(!task||!hours){
+
+  box.className='result show';
+
+  box.innerHTML='Enter the task and weekly hours first.';
+
+  return;
+
+ }
+
+ box.className='result show';
+
+ box.innerHTML=
+
+ '<strong>Your target:</strong> recover about '+
+
+ (hours*.4).toFixed(1)+' hours/week.<br><br>'+
+
+ 'Break "'+task+'" into 3 repeated steps. Template, batch or automate the most repetitive step first.';
 
 }
 
